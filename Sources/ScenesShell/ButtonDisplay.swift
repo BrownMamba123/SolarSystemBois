@@ -9,10 +9,10 @@ class ButtonLayout : RenderableEntity, EntityMouseDragHandler {
         setAlpha(alpha:Alpha(alphaValue:0.8))
     }
 
-    
+/*    
     override func boundingRect() -> Rect {
     }
-
+*/
     override func setup(canvasSize:Size, canvas:Canvas) {
         dispatcher.registerEntityMouseDragHandler(handler:self)
     }
@@ -31,9 +31,9 @@ class ButtonLayout : RenderableEntity, EntityMouseDragHandler {
     
     override func calculate(canvasSize:Size) {
         print("Calculate \(name)")
-        guard let interactionLayer = layer as? InteractionLayer else {
-            fatalError("You are a failure in life")
+//        guard let interactionLayer = layer as? InteractionLayer else {
+  //          fatalError("You are a failure in life")
         }
-      
-     }
+
 }
+
