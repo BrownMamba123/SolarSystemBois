@@ -6,7 +6,7 @@ class Sun : RenderableEntity {
 
    
 //    var fillStyle = FillStyle(color:Color(.yellow))
-    var strokeStyle = StrokeStyle(color:Color(.black))
+    var strokeStyle = StrokeStyle(color:Color(.yellow))
 
     let circle = Ellipse(center:Point(), radiusX:80, radiusY:80, fillMode:.fillAndStroke) //main
 
