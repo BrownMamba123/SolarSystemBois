@@ -1,10 +1,11 @@
 import Scenes
 import Igis
+import Foundation
 
 class Sun : RenderableEntity {
 
    
-    var fillStyle = FillStyle(color:Color(.yellow))
+//    var fillStyle = FillStyle(color:Color(.yellow))
     var strokeStyle = StrokeStyle(color:Color(.black))
 
     let circle = Ellipse(center:Point(), radiusX:80, radiusY:80, fillMode:.fillAndStroke) //main
@@ -12,11 +13,18 @@ class Sun : RenderableEntity {
     var velocityX = Int.random(in:10...20)
     var velocityY = Int.random(in:10...20)
    // var expansionRate = 1
+    let fillImage : Image
+    let fillPattern : Pattern
+    var fillStyle : FillStyle
 
+    
     init(){
-        super.init(name:"Sun")
-        setAlpha(alpha:Alpha(alphaValue:0.8))
+                fillImage = Image(sourceURL: URL(string:"https://i.ytimg.com/vi/sIufPSMIkN4/maxresdefault.jpg")!)
+        fillPattern =  Pattern(image:fillImage, repetition:.repeated)
+        fillStyle = FillStyle(pattern:fillPattern)
 
+        super.init(name:"Sun")
+        setAlpha(alpha:Alpha(alphaValue:1))
     }
     
     override func boundingRect() -> Rect{
@@ -31,6 +39,7 @@ class Sun : RenderableEntity {
     
     override func setup(canvasSize:Size, canvas:Canvas) { // make the ball start from the middle of the canvas
         circle.center = Point(x:canvasSize.width/2, y:canvasSize.height/2)
+        canvas.setup(fillImage, fillPattern)
     }
     
     override func calculate(canvasSize:Size){
@@ -44,7 +53,10 @@ class Sun : RenderableEntity {
         }*/
     }
     
-    override func render(canvas:Canvas) {
+    override func render(canvas:Canvas){
+    if fillImage.isReady && fillPattern.isReady{
         canvas.render(fillStyle, strokeStyle, circle)
     }
+}
+
 }
