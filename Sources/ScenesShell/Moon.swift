@@ -47,7 +47,7 @@ class Moon : RenderableEntity, EntityMouseDragHandler {
         let earth = interactionLayer.earth
 
         circle.center = Point(x:earth.circle.center.x + (earth.circle.radiusX * 2) + circle.radiusX, y:earth.circle.center.y) 
-   
+        
         
         let center = earth.circle.center
 //        let relativeCenter = sun.circle.center

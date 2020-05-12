@@ -18,6 +18,6 @@ class ImageEntity : RenderableEntity {
     override func render(canvas:Canvas) {
         if image.isReady {
             canvas.render(image)
-        }
+        } 
     }
 }

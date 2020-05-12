@@ -8,7 +8,7 @@ class InteractionLayer : Layer {
     let earth : Earth
     let mars : Mars
     let moon : Moon
-
+//    let controlPanel : ControlPanel
     init() {
         sun = Sun()
         mercury = Mercury()
@@ -16,6 +16,7 @@ class InteractionLayer : Layer {
         earth = Earth()
         mars = Mars()
         moon = Moon()
+   //     controlPanel = ControlPanel()
         super.init(name:"Inteteraction")
 
         insert(entity:sun, at:.front)
@@ -24,6 +25,7 @@ class InteractionLayer : Layer {
         insert(entity:earth, at:.front)
         insert(entity:mars, at:.front)
         insert(entity:moon, at:.front)
+     //   insert(entity:controlPanel, at:.front)
     }
 
     override func postCalculate(canvas:Canvas) {
