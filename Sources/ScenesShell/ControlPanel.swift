@@ -1,6 +1,7 @@
+import Scenes
 import Igis
-
-class ControlPanel {
+import Foundation
+class ControlPanel : Layer  {
     let allButtons : [Button]
     let increaseSpeed : Button
     let decreaseSpeed : Button
